@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#610000"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@id/iconoPrincipal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="15dp"
+
+        android:text="CINEMADRID"
+        android:textColor="#FFFFFF"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/nexa_bold"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/iconoPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icono_principal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="75dp"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/boton_iniciar_sesion"
+        app:layout_constraintTop_toTopOf="@id/iconoPrincipal"
+        app:layout_constraintBottom_toBottomOf="@id/iconoPrincipal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="20dp"
+
+        android:text="Iniciar Sesion"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/nexa_bold"
+        />
+
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/boton_crear_cuenta"
+        app:layout_constraintTop_toBottomOf="@id/btnIniciarSesion"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="70dp"
+
+        android:layout_marginTop="20dp"
+
+        android:text="Crear Cuenta"
+        android:textSize="20sp"
+        android:textColor="#5e0600"
+        android:fontFamily="@font/nexa_bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

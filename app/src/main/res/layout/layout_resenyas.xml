@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borde_layout_resenyas"
+    android:layout_marginTop="0dp"
+    android:id="@+id/layoutReseñas"
+    >
+
+    <TextView
+        android:id="@+id/tvNombreUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reseña"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="5dp"
+
+        android:text="Nombre de Usuario"
+        android:fontFamily="@font/nexa_bold"
+        android:textColor="#FFFFFF"
+        android:textSize="27sp"
+
+        />
+
+    <EditText
+        android:id="@+id/reseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreUsuario"
+        app:layout_constraintBottom_toTopOf="@id/nota"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/borde_resenya"
+        android:enabled="false"
+
+        android:paddingTop="25dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="22sp"
+        android:text="dadsaswedwdadadadadaddqdqwdqdqwdqdfd\ndssd\ndsds\ndsds\ndqdqdq\nwfdfw\nfwfw"
+        android:textAlignment="center"
+        android:textColor="#610000"
+        android:fontFamily="@font/nexa_regular"
+
+        />
+
+    <TextView
+        android:id="@+id/tvFechaReseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/reseña"
+        app:layout_constraintTop_toTopOf="@id/reseña"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="3dp"
+
+        android:fontFamily="@font/nexa_regular"
+        android:text="02/10/2024"
+        android:textAlignment="center"
+        android:textColor="#610000"
+        android:textSize="15sp"
+
+        android:visibility="visible"
+        />
+
+    <RatingBar
+        android:id="@+id/nota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/tvNotaTexto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reseña"
+
+        android:layout_marginBottom="2dp"
+
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+
+        android:layout_gravity="center_horizontal"
+        android:numStars="10"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+
+        android:rating="3"
+        android:progressTint="#a37c03"
+        android:secondaryProgressTint="#bda000"
+        android:progressBackgroundTint="#FFFFFFFF"
+        />
+
+    <TextView
+        android:id="@+id/tvNotaTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nota"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="30dp"
+
+        android:text="8.5"
+        android:textSize="30sp"
+        android:textColor="#cfaf02"
+        android:fontFamily="@font/nexa_bold"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

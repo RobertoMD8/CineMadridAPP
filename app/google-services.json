@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "304676424523",
+    "project_id": "cinemadridapp",
+    "storage_bucket": "cinemadridapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304676424523:android:7a6a126df737345f3836ce",
+        "android_client_info": {
+          "package_name": "com.example.cinemadridapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpl0ISJoRuZxBhMXDEv6WIxPXyINcTeXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

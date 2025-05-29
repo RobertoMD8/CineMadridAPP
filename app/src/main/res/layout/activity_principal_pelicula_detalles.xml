@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#610000"
+    >
+
+    <ImageButton
+        android:id="@+id/btnAtras"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="15dp"
+
+        android:src="@drawable/button_atras"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        />
+
+    <ImageButton
+        android:id="@+id/posterPelicula"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btnAtras"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintDimensionRatio="2:3"
+        android:padding="2.5dp"
+
+        android:src="@drawable/poster_mad_max"
+        android:background="@drawable/boton_borde_blanco"
+        />
+
+    <TextView
+        android:id="@+id/tvNotaGlobal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/posterPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/posterPelicula"
+
+
+        android:text=""
+        android:fontFamily="@font/nexa_bold"
+        android:textColor="#916e03"
+        android:textSize="60sp"
+        />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/distribucionNotasLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/posterPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNotaGlobal"
+        app:layout_constraintBottom_toBottomOf="@id/posterPelicula"
+        android:layout_marginHorizontal="5dp"
+
+        >
+
+        <TextView
+            android:id="@+id/texto10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra10"
+            app:layout_constraintTop_toTopOf="@+id/barra10"
+            app:layout_constraintBottom_toBottomOf="@id/barra10"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text="10"
+
+            />
+
+        <TextView
+            android:id="@+id/texto9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra9"
+            app:layout_constraintTop_toTopOf="@+id/barra9"
+            app:layout_constraintBottom_toBottomOf="@id/barra9"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 9"
+
+            />
+
+        <TextView
+            android:id="@+id/texto8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra8"
+            app:layout_constraintTop_toTopOf="@+id/barra8"
+            app:layout_constraintBottom_toBottomOf="@id/barra8"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 8"
+
+            />
+
+        <TextView
+            android:id="@+id/texto7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra7"
+            app:layout_constraintTop_toTopOf="@+id/barra7"
+            app:layout_constraintBottom_toBottomOf="@id/barra7"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 7"
+
+            />
+
+        <TextView
+            android:id="@+id/texto6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra6"
+            app:layout_constraintTop_toTopOf="@+id/barra6"
+            app:layout_constraintBottom_toBottomOf="@id/barra6"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 6"
+
+            />
+
+        <TextView
+            android:id="@+id/texto5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra5"
+            app:layout_constraintTop_toTopOf="@+id/barra5"
+            app:layout_constraintBottom_toBottomOf="@id/barra5"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 5"
+
+            />
+
+        <TextView
+            android:id="@+id/texto4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra4"
+            app:layout_constraintTop_toTopOf="@+id/barra4"
+            app:layout_constraintBottom_toBottomOf="@id/barra4"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 4"
+
+            />
+
+        <TextView
+            android:id="@+id/texto3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra3"
+            app:layout_constraintTop_toTopOf="@+id/barra3"
+            app:layout_constraintBottom_toBottomOf="@id/barra3"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 3"
+
+            />
+
+        <TextView
+            android:id="@+id/texto2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra2"
+            app:layout_constraintTop_toTopOf="@+id/barra2"
+            app:layout_constraintBottom_toBottomOf="@id/barra2"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 2"
+
+            />
+
+        <TextView
+            android:id="@+id/texto1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/barra1"
+            app:layout_constraintTop_toTopOf="@+id/barra1"
+            app:layout_constraintBottom_toBottomOf="@id/barra1"
+            app:layout_constraintWidth_percent="0.13"
+
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:text=" 1"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/barra10"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/barra9"
+            app:layout_constraintStart_toEndOf="@id/texto10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+            />
+        <ProgressBar
+            android:id="@+id/barra9"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra10"
+            app:layout_constraintBottom_toTopOf="@id/barra8"
+            app:layout_constraintStart_toEndOf="@id/texto9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra8"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra9"
+            app:layout_constraintBottom_toTopOf="@id/barra7"
+            app:layout_constraintStart_toEndOf="@id/texto8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra7"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra8"
+            app:layout_constraintBottom_toTopOf="@id/barra6"
+            app:layout_constraintStart_toEndOf="@id/texto7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra6"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra7"
+            app:layout_constraintBottom_toTopOf="@id/barra5"
+            app:layout_constraintStart_toEndOf="@id/texto6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra5"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra6"
+            app:layout_constraintBottom_toTopOf="@id/barra4"
+            app:layout_constraintStart_toEndOf="@id/texto5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra4"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra5"
+            app:layout_constraintBottom_toTopOf="@id/barra3"
+            app:layout_constraintStart_toEndOf="@id/texto4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra4"
+            app:layout_constraintBottom_toTopOf="@id/barra2"
+            app:layout_constraintStart_toEndOf="@id/texto3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra3"
+            app:layout_constraintBottom_toTopOf="@id/barra1"
+            app:layout_constraintStart_toEndOf="@id/texto2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+        <ProgressBar
+            android:id="@+id/barra1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/barra2"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/texto1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            android:max="1000"
+            android:progressTint="#FFFFFF"
+
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvNumeroDeNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/distribucionNotasLayout"
+        app:layout_constraintStart_toStartOf="@+id/distribucionNotasLayout"
+        app:layout_constraintEnd_toEndOf="@+id/distribucionNotasLayout"
+
+        android:layout_marginTop="0dp"
+
+        android:text="0 notas"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/nexa_extra_light"
+        />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/posterPelicula"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        >
+
+        <ScrollView
+            android:id="@+id/scrollDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintHeight_default="wrap">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDetalles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tvNombrePelicula"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/nexa_bold"
+                    android:text="Mad Max Fury Road: The return of"
+                    android:textAlignment="center"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDuracion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/nexa_bold"
+                    android:text="120 minutos"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDirector"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvDirector"
+                    app:layout_constraintWidth_percent="0.25" />
+
+                <TextView
+                    android:id="@+id/tvDirector"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nexa_bold"
+                    android:text="Christopher McQuarrie"
+                    android:textAlignment="center"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNombrePelicula"
+                    app:layout_constraintWidth_percent="0.65" />
+
+                <TextView
+                    android:id="@+id/tvGeneros"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde_blanco_fino"
+                    android:fontFamily="@font/nexa_bold"
+                    android:padding="10dp"
+
+                    android:text="Generos: Acciones de la verdadera palo abienrta"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDirector"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde_blanco_normal"
+                    android:fontFamily="@font/nexa_bold"
+                    android:padding="10dp"
+
+                    android:text="En un páramo postapocalíptico, una mujer se rebela contra
+                    un gobernante tiránico en busca de su patria con
+                    la ayuda de un grupo de prisioneras,
+                    un adorador psicótico y un vagabundo llamado Max."
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGeneros"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tituloTuReseña"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+
+                    android:fontFamily="@font/nexa_bold"
+                    android:text="Ver Reseñas"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp"
+
+                    android:visibility="visible"
+                    />
+
+                <ImageButton
+                    android:id="@+id/dibujoReseña"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/tu_resenya_icono"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tituloTuReseña"
+                    android:layout_marginEnd="10dp"
+
+                    android:scaleType="centerCrop"
+                    android:background="#000000"
+
+                    android:visibility="visible"
+                    />
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSugerenciaMas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+
+        android:clickable="true"
+        app:srcCompat="@drawable/icon_circular"
+        app:borderWidth="0dp"
+        android:scaleY="1.3"
+        android:scaleX="1.3"
+        app:maxImageSize="53dp"
+        android:backgroundTint="#610000"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
