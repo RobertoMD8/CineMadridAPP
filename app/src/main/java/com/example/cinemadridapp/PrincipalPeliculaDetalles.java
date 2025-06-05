@@ -204,7 +204,7 @@ public class PrincipalPeliculaDetalles extends AppCompatActivity {
                         int cantidadNotas = document.getLong("cantidadNotas").intValue();
 
                         double nota = sumaTotalNotas / cantidadNotas;
-                        tvNotaGlobal.setText(Double.toString(nota));
+                        tvNotaGlobal.setText(String.format("%.1f", nota));
                         tvNumeroDeNotas.setText(cantidadNotas + " notas");
                         numTotalNotas = cantidadNotas;
 

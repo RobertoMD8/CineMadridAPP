@@ -154,7 +154,7 @@
 
             android:layout_marginTop="15dp"
 
-            android:tag="sciFi"
+            android:tag="sci-Fi"
             android:src="@drawable/preferencia_sci_fi"
             android:scaleType="centerCrop"
             android:background="#00000000"

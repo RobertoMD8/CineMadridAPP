@@ -2,17 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navegacion_pantalla_principal"
         android:icon="@drawable/peliculas_nav_icon"
         android:title="Peliculas" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/personal_nav_icon"
+        android:id="@+id/navegacion_pantalla_personal"
+        android:icon="@drawable/icono_pantalla_personal"
         android:title="Personal" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navegacion_pantalla_estadisticas"
+        android:icon="@drawable/estadisticas_icono_navegacion"
+        android:title="Estadisticas" />
+
+    <item
+        android:id="@+id/navegacion_pantalla_ajustes_cuenta"
         android:icon="@drawable/resumen"
         android:title="Cuenta/Ajustes" />
 

@@ -20,14 +20,21 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.cinemadridapp.Objetos.Pelicula;
+import com.example.cinemadridapp.Objetos.Preferencia;
 import com.example.cinemadridapp.PersonalPeliculaDetalles;
 import com.example.cinemadridapp.PrincipalPeliculaDetalles;
 import com.example.cinemadridapp.R;
 import com.example.cinemadridapp.databinding.FragmentPantallaPrincipalBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class PantallaPrincipal extends Fragment {
@@ -52,9 +59,12 @@ public class PantallaPrincipal extends Fragment {
     private ArrayAdapter arrayAdapterLayoutPeliculas;
     private Spinner spinnerFiltro;
     private ArrayAdapter arrayAdapterFiltro;
+    private FirebaseFirestore db;
 
     List<List<Pelicula>> peliculasDivididas;
     List<Pelicula> peliculas;
+    HashMap<String, String> mapaNotasGlobales;
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -71,7 +81,10 @@ public class PantallaPrincipal extends Fragment {
         peliculasDivididas  = dividirPeliculasEn4(peliculas);
         layoutPeliculas.setAdapter(setArrayAdapterLayoutPeliculas(peliculasDivididas));
 
+        db = FirebaseFirestore.getInstance();
 
+        mapaNotasGlobales = new HashMap<>();
+        getNotasGlobalesBBDD();
 
         etBuscarPeliculas.setOnQueryTextListener(busqueda());
 
@@ -79,6 +92,7 @@ public class PantallaPrincipal extends Fragment {
         filtros.add("Año");
         filtros.add("Nota");
         filtros.add("Nombre");
+        filtros.add("Preferencias");
         arrayAdapterFiltro = new ArrayAdapter<>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, filtros);
         spinnerFiltro.setAdapter(arrayAdapterFiltro);
 
@@ -144,14 +158,36 @@ public class PantallaPrincipal extends Fragment {
                     if (x < pelis.size()) {
 
                         Pelicula pelicula = pelis.get(x);
-                        int id = getResources().getIdentifier(pelicula.getPoster(), "drawable", requireActivity().getPackageName());
-                        imagenPelicula.setVisibility(View.VISIBLE);
-                        imagenPelicula.setImageResource(id);
+                        // TODO Actualizar un poco
+                        if (Pelicula.mapaIdPosters.containsKey(pelicula.getPoster())) {
+                            Glide.with(getContext())
+                                    .load(Pelicula.mapaIdPosters.get(pelicula.getPoster()))
+                                    .into(imagenPelicula);
+
+                        } else {
+                            int id = getResources().getIdentifier(pelicula.getPoster(), "drawable", requireActivity().getPackageName());
+                            Pelicula.mapaIdPosters.put(pelicula.getPoster(), id);
+                            Glide.with(getContext())
+                                    .load(getResources().getIdentifier(pelicula.getPoster(), "drawable", getContext().getPackageName()))
+                                    .into(imagenPelicula);
+                            Log.d("AQUI", "AQUI AQUI AQUI");
+                        }
+                        // Comprobamos para ahorrar memoria
+                        if (imagenPelicula.getVisibility() != View.VISIBLE) {
+                            imagenPelicula.setVisibility(View.VISIBLE);
+                        }
+
                         imagenPelicula.setOnClickListener(verPelicula);
                         imagenPelicula.setTag(pelicula.getPoster());
 
                         notaPelicula.setVisibility(View.VISIBLE);
-                        notaPelicula.setText(String.valueOf(pelicula.getNotaGlobal()));
+                        String notaGlobal = mapaNotasGlobales.get(pelicula.getNombre());
+                        if (notaGlobal != null) {
+                            notaPelicula.setText(notaGlobal);
+                        } else {
+                            notaPelicula.setText("0.0");
+                        }
+
                     } else {
                         imagenPelicula.setVisibility(View.INVISIBLE);
                         notaPelicula.setVisibility(View.INVISIBLE);
@@ -234,15 +270,13 @@ public class PantallaPrincipal extends Fragment {
                 peliculas.sort((p1, p2) -> Double.compare(p2.getNotaGlobal(), p1.getNotaGlobal()));
                 // Filtrar por nota
                 break;
-            case "Popular":
-                // Filtrar por popularidad
-                break;
             case "Nombre":
                 peliculas.sort((p1, p2) -> CharSequence.compare(p1.getNombre(), p2.getNombre()));
                 // Filtrar por nombre
                 break;
-            case "Genero":
+            case "Preferencias":
                 // Filtrar por género
+                filtrarPreferencias();
                 break;
         }
 
@@ -250,8 +284,80 @@ public class PantallaPrincipal extends Fragment {
         layoutPeliculas.setAdapter(setArrayAdapterLayoutPeliculas(peliculasDivididas));
     }
 
+    private void getNotasGlobalesBBDD() {
 
-    public List<List<Pelicula>> dividirPeliculasEn4(List<Pelicula> peliculas) {
+        db.collection("NotasGlobales").get()
+                .addOnSuccessListener( queryDocumentSnapshots -> {
+
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        int cantidadNotas = doc.getLong("cantidadNotas").intValue();
+                        double sumaTotalNotas = doc.getDouble("sumaTotalNotas");
+                        double notaGlobal = sumaTotalNotas / cantidadNotas;
+                        String notaGlobalTexto = String.format("%.1f", notaGlobal);
+
+                        mapaNotasGlobales.put(doc.getString("pelicula"), notaGlobalTexto);
+                    }
+                    arrayAdapterLayoutPeliculas.notifyDataSetChanged();
+                });
+
+    }
+
+    private void filtrarPreferencias() {
+        ArrayList<Pelicula> grupo1 = new ArrayList<>();
+        ArrayList<Pelicula> grupo2 = new ArrayList<>();
+        ArrayList<Pelicula> grupo3 = new ArrayList<>();
+        ArrayList<Pelicula> grupo4 = new ArrayList<>();
+
+
+
+        ArrayList<String> preferencias = new ArrayList<>();
+        for (Map.Entry<String, Boolean> mapa: Preferencia.getPreferencias().entrySet()) {
+            if (mapa.getValue() != null) {
+                if (mapa.getValue()) {
+                    preferencias.add(mapa.getKey());
+                    Log.d("PREFERENCIAS", mapa.getKey());
+                }
+            }
+
+        }
+
+        int count = 0;
+        for (Pelicula p : peliculas) {
+            count = 0;
+            String temp = p.getGeneros().strip().toLowerCase();
+            String[] split = temp.split(",");
+
+            for (String s : preferencias) {
+                for (int x = 0; x < split.length ; x++) {
+                    if (split[x].trim().equals(s)) {
+                        Log.d("PERO BUENO", p.getNombre() + " : " + split[x]);
+                        Log.d("PREFERENCIAS MATCH", p.getNombre() + " : " + s);
+                        count++;
+                    }
+                }
+            }
+
+            if (count == 3) {
+                grupo1.add(p);
+            } else if (count == 2) {
+                grupo2.add(p);
+            } else if (count == 1) {
+                grupo3.add(p);
+            } else {
+                grupo4.add(p);
+            }
+
+        }
+
+        peliculas = new ArrayList<>();
+        peliculas.addAll(grupo1);
+        peliculas.addAll(grupo2);
+        peliculas.addAll(grupo3);
+        peliculas.addAll(grupo4);
+    }
+
+
+    private List<List<Pelicula>> dividirPeliculasEn4(List<Pelicula> peliculas) {
         List<List<Pelicula>> chunks = new ArrayList<>();
         for (int i = 0; i < peliculas.size(); i += 4) {
             chunks.add(peliculas.subList(i, Math.min(i + 4, peliculas.size())));
@@ -259,7 +365,7 @@ public class PantallaPrincipal extends Fragment {
         return chunks;
     }
 
-    public List<Pelicula> comprimirPeliculas(List<List<Pelicula>> peliculas) {
+    private List<Pelicula> comprimirPeliculas(List<List<Pelicula>> peliculas) {
         List<Pelicula> chunks = new ArrayList<>();
         for (int x = 0; x < peliculas.size(); x++) {
             for (int y = 0; y < peliculas.get(x).size(); y ++) {

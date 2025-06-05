@@ -24,7 +24,7 @@
         android:text="Nombre de Usuario"
         android:fontFamily="@font/nexa_bold"
         android:textColor="#FFFFFF"
-        android:textSize="27sp"
+        android:textSize="23sp"
 
         />
 
@@ -37,16 +37,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
 
-        android:background="@drawable/borde_resenya"
+        android:background="@drawable/borde_resenya_texto"
         android:enabled="false"
 
         android:paddingTop="25dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:text="dadsaswedwdadadadadaddqdqwdqdqwdqdfd\ndssd\ndsds\ndsds\ndqdqdq\nwfdfw\nfwfw"
         android:textAlignment="center"
         android:textColor="#610000"
@@ -60,14 +60,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/reseña"
         app:layout_constraintTop_toTopOf="@id/reseña"
-        android:layout_marginEnd="5dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="5dp"
 
         android:fontFamily="@font/nexa_regular"
         android:text="02/10/2024"
         android:textAlignment="center"
         android:textColor="#610000"
-        android:textSize="15sp"
+        android:textSize="13sp"
 
         android:visibility="visible"
         />
@@ -76,13 +76,13 @@
         android:id="@+id/nota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toTopOf="@id/tvNotaTexto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reseña"
 
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="0dp"
 
         style="@style/Widget.AppCompat.RatingBar.Indicator"
 
@@ -90,6 +90,8 @@
         android:numStars="10"
         android:stepSize="0.5"
         android:isIndicator="true"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
 
         android:rating="3"
         android:progressTint="#a37c03"
@@ -106,10 +108,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="25dp"
 
         android:text="8.5"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textColor="#cfaf02"
         android:fontFamily="@font/nexa_bold"
         />

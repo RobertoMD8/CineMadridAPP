@@ -18,6 +18,8 @@ public class Pelicula {
     private String poster;
     private double notaGlobal;
 
+    public static HashMap<String , Integer> mapaIdPosters = new HashMap<>();
+
     public Pelicula(String nombre, String director, int año, double duracion, String generos, String descripcion, String poster, double notaGlobal) {
         this.nombre = nombre;
         this.director = director;
@@ -66,7 +68,7 @@ public class Pelicula {
         Pelicula pDune2021 = new Pelicula("Dune", "Denis Villeneuve", 2021, 155.0, "Sci-Fi, Aventura, Drama",
                 "Una familia noble se ve envuelta en una guerra por el control del bien más valioso de la galaxia mientras su heredero se ve perturbado por visiones de un futuro oscuro.", "poster_dune_part_one", 8.0);
 
-        Pelicula pDune2 = new Pelicula("Dune Parte Dos", "Denis Villeneuve", 2024, 166.0, "Sci-Fi, Aventura, Acción",
+        Pelicula pDune2 = new Pelicula("Dune Parte Dos", "Denis Villeneuve", 2024, 166.0, "Sci-Fi, Aventura, Accion",
                 "El duque Paul Atreides se une a los Fremen y comienza su entrenamiento para convertirse en Muad'Dib, mientras trata de evitar el terrible futuro que ha previsto: una guerra santa en su nombre, esparciéndose por todo el universo conocido.", "poster_dune_part_two", 8.5);
 
         Pelicula pGodfather = new Pelicula("El Padrino", "Francis Ford Coppola", 1972, 175.0, "Gangster, Crimen, Drama",
@@ -75,13 +77,13 @@ public class Pelicula {
         Pelicula pGodfatherPart2 = new Pelicula("El Padrino Parte 2", "Francis Ford Coppola", 1974, 202.0, "Gangster, Crimen, Drama",
                 "Se retratan los inicios de la vida y la carrera de Vito Corleone en el Nueva York de los años 20, mientras su hijo, Michael, amplía y refuerza su control sobre el sindicato del crimen familiar.", "poster_the_godfather_part_two", 9.0);
 
-        Pelicula pWarPlanetApes = new Pelicula("La Guerra Del Planeta de Los Simios", "Matt Reeves", 2017, 140.0, "Sci-Fi, Aventura, Acción",
+        Pelicula pWarPlanetApes = new Pelicula("La Guerra Del Planeta de Los Simios", "Matt Reeves", 2017, 140.0, "Sci-Fi, Aventura, Accion",
                 "Después de que los simios sufran pérdidas inimaginables, César lucha con sus instintos más oscuros y comienza su propia búsqueda mítica para vengar a su especie.", "poster_war_for_the_planet_of_the_apes", 7.4);
 
-        Pelicula pDawnPlanetApes = new Pelicula("EL Amanecer Del Planeta de Los Simios", "Matt Reeves", 2014, 130.0, "Sci-Fi, Aventura, Acción",
+        Pelicula pDawnPlanetApes = new Pelicula("EL Amanecer Del Planeta de Los Simios", "Matt Reeves", 2014, 130.0, "Sci-Fi, Aventura, Accion",
                 "Una creciente nación de simios genéticamente evolucionados, liderada por César, está amenazada por una banda de supervivientes humanos del devastador virus que se desató una década atrás.", "poster_dawn_of_the_planet_of_the_apes", 7.6);
 
-        Pelicula pRisePlanetApes = new Pelicula("EL Origen Del Planeta de Los Simios", "Rupert Wyatt", 2011, 105.0, "Sci-Fi, Drama, Acción",
+        Pelicula pRisePlanetApes = new Pelicula("EL Origen Del Planeta de Los Simios", "Rupert Wyatt", 2011, 105.0, "Sci-Fi, Drama, Accion",
                 "Una sustancia diseñada para ayudar al cerebro a repararse a sí mismo da una inteligencia avanzada a un chimpancé que lidera un levantamiento de simios.", "poster_rise_of_the_planet_of_the_apes", 7.6);
 
 

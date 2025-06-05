@@ -579,7 +579,7 @@
                     android:background="@drawable/borde_resenya"
                     android:enabled="false"
 
-                    android:paddingTop="30dp"
+                    android:paddingTop="25dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="10dp"
@@ -624,6 +624,9 @@
                     android:layout_gravity="center_horizontal"
                     android:numStars="10"
                     android:stepSize="0.5"
+                    android:progressTint="#a37c03"
+                    android:secondaryProgressTint="#bda000"
+                    android:progressBackgroundTint="#FFFFFFFF"
                     android:visibility="gone"
                     />
 

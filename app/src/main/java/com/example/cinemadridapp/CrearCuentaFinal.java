@@ -13,11 +13,11 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cinemadridapp.Objetos.Estadisticas;
 import com.example.cinemadridapp.Objetos.Preferencia;
 import com.example.cinemadridapp.Objetos.Usuario;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -112,7 +112,7 @@ public class CrearCuentaFinal extends AppCompatActivity {
         if (usuario.equals(nombreUsuarioGenerado)) {
             db.collection("Usuarios").document(nombreUsuarioGenerado).update("telefono", telefono);
             Usuario.setTelefono(telefono);
-            crearPreferenciasBBDD();
+            crearPreferenciasEstadisticasBBDD();
         }
         else if (usuario.isEmpty()) {
             mostrarError("Usuario Vacio");
@@ -132,7 +132,7 @@ public class CrearCuentaFinal extends AppCompatActivity {
                                        db.collection("Usuarios").document(usuario).set(datosNuevos);
                                        Usuario.setNombreUsuario(usuario);
                                        Usuario.setTelefono(telefono);
-                                       crearPreferenciasBBDD();
+                                       crearPreferenciasEstadisticasBBDD();
                                    });
                        }
                     });
@@ -140,15 +140,13 @@ public class CrearCuentaFinal extends AppCompatActivity {
 
     }
 
-    private void crearPreferenciasBBDD() {
+    private void crearPreferenciasEstadisticasBBDD() {
 
-        HashMap<String, Boolean> mapaPreferencias = Preferencia.getPreferencias();
+        Preferencia.crearPreferencias(Usuario.getNombreUsuario());
+        Estadisticas.crearEstadisticas(Usuario.getNombreUsuario());
 
-        db.collection("Preferencias").document(Usuario.getNombreUsuario()).set(mapaPreferencias)
-                .addOnSuccessListener(documentReference -> {
-                    Intent intent = new Intent(CrearCuentaFinal.this, PantallaNavegacion.class);
-                    startActivity(intent);
-                });
+        Intent intent = new Intent(CrearCuentaFinal.this, PantallaNavegacion.class);
+        startActivity(intent);
     }
 
 
