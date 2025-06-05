@@ -7,20 +7,31 @@
     android:background="#610000"
     >
 
+    <ImageView
+        android:id="@+id/iconoPersonal"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="@id/etBuscarPeliculas"
+        app:layout_constraintBottom_toBottomOf="@id/etBuscarPeliculas"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/icono_pantalla_personal"
+        />
 
-    <SearchView
+    <TextView
         android:id="@+id/etBuscarPeliculas"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconoPersonal"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="50dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:layout_marginStart="5dp"
+        app:layout_constraintWidth_percent="0.55"
 
-        android:background="@drawable/edit_text_buscar_pelicula"
+        android:paddingTop="10dp"
+
+        android:text="Area Personal"
         android:textAlignment="center"
-        android:padding="10dp"
+        android:textColor="#FFFFFFFF"
+        android:textSize="30sp"
         android:fontFamily="@font/nexa_regular"
 
         />

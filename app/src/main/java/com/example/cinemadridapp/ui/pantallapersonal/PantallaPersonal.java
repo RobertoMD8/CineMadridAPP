@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.cinemadridapp.Objetos.ExpedienteReseñaNota;
 import com.example.cinemadridapp.Objetos.Pelicula;
 import com.example.cinemadridapp.PersonalPeliculaDetalles;
@@ -61,7 +62,7 @@ public class PantallaPersonal extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         layoutPeliculas = view.findViewById(R.id.layoutPeliculas);
-        etBuscarPeliculas = view.findViewById(R.id.etBuscarPeliculas);
+        // etBuscarPeliculas = view.findViewById(R.id.etBuscarPeliculas);
         spinnerFiltro = view.findViewById(R.id.spinnerFiltro);
 
         peliculas = new ArrayList<>();
@@ -74,7 +75,7 @@ public class PantallaPersonal extends Fragment {
         peliculasDivididas  = dividirPeliculasEn4(peliculas);
         layoutPeliculas.setAdapter(setArrayAdapterLayoutPeliculas(peliculasDivididas));
 
-        etBuscarPeliculas.setOnQueryTextListener(busqueda());
+        // etBuscarPeliculas.setOnQueryTextListener(busqueda());
 
         ArrayList<String> filtros = new ArrayList<>();
         filtros.add("Año");
@@ -144,9 +145,26 @@ public class PantallaPersonal extends Fragment {
                     if (x < pelis.size()) {
 
                         Pelicula pelicula = pelis.get(x);
-                        int id = getResources().getIdentifier(pelicula.getPoster(), "drawable", requireActivity().getPackageName());
-                        imagenPelicula.setVisibility(View.VISIBLE);
-                        imagenPelicula.setImageResource(id);
+                        // TODO Actualizar un poco
+                        if (Pelicula.mapaIdPosters.containsKey(pelicula.getPoster())) {
+                            Glide.with(getContext())
+                                    .load(Pelicula.mapaIdPosters.get(pelicula.getPoster()))
+                                    .into(imagenPelicula);
+
+                        } else {
+                            int id = getResources().getIdentifier(pelicula.getPoster(), "drawable", requireActivity().getPackageName());
+                            Pelicula.mapaIdPosters.put(pelicula.getPoster(), id);
+                            Glide.with(getContext())
+                                    .load(getResources().getIdentifier(pelicula.getPoster(), "drawable", getContext().getPackageName()))
+                                    .into(imagenPelicula);
+                            Log.d("AQUI", "AQUI AQUI AQUI");
+                        }
+                        // Comprobamos para ahorrar memoria
+                        if (imagenPelicula.getVisibility() != View.VISIBLE) {
+                            imagenPelicula.setVisibility(View.VISIBLE);
+                        }
+
+
                         imagenPelicula.setOnClickListener(verPelicula);
                         imagenPelicula.setTag(pelicula.getPoster());
 
@@ -194,6 +212,8 @@ public class PantallaPersonal extends Fragment {
                     filtrar(spinnerFiltro.getSelectedItem().toString());
                 }
 
+                // Filtramos por si acaso (NECESARIO , NO lo Quites)
+                filtrar(spinnerFiltro.getSelectedItem().toString());
                 peliculasDivididas = dividirPeliculasEn4(peliculas);
                 layoutPeliculas.setAdapter(setArrayAdapterLayoutPeliculas(peliculasDivididas));
                 return false;

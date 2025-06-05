@@ -133,7 +133,7 @@ public class PantallaPrincipal extends Fragment {
                 }
 
 
-                int alturaPorcentaje = (int) (alturaPantalla * 0.19);
+                int alturaPorcentaje = (int) (alturaPantalla * 0.185);
                 View layout = convertView.findViewById(R.id.filaPeliculas);
 
                 if (layout != null) {
