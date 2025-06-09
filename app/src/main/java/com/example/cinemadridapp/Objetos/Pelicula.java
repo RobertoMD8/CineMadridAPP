@@ -120,6 +120,255 @@ public class Pelicula {
 
 
 
+
+
+
+
+        Pelicula pAvengers = new Pelicula(
+                "The Avengers",
+                "Joss Whedon",
+                2012,
+                143.0,
+                "Accion, Aventura, Sci-Fi",
+                "Los héroes más poderosos de la Tierra deben unirse para detener a Loki y su ejército alienígena que amenaza con esclavizar a la humanidad en Nueva York.",
+                "poster_avengers",
+                8.0
+        );
+
+        Pelicula pAgeOfUltron = new Pelicula(
+                "Avengers: Age of Ultron",
+                "Joss Whedon",
+                2015,
+                141.0,
+                "Accion, Aventura, Sci-Fi",
+                "Cuando Tony Stark y Bruce Banner intentan reactivar un programa de paz llamado Ultron, todo sale mal y los Vengadores deben detener al villano Ultron de llevar a cabo su terrible plan.",
+                "poster_avengers_age_of_ultron",
+                7.3
+        );
+
+        Pelicula pInfinityWar = new Pelicula(
+                "Avengers: Infinity War",
+                "Hermanos Russo",
+                2018,
+                149.0,
+                "Accion, Aventura, Sci-Fi",
+                "Los Vengadores y sus aliados deberán sacrificarse para detener al poderoso Thanos antes de que su blitz de devastación y ruina termine con el universo.",
+                "poster_avengers_infinity_war",
+                8.5
+        );
+
+        Pelicula pEndgame = new Pelicula(
+                "Avengers: Endgame",
+                "Anthony Russo, Joe Russo",
+                2019,
+                181.0,
+                "Accion, Sci-Fi, Drama",
+                "Tras los devastadores eventos de Infinity War, el universo está en ruinas. Con ayuda de sus aliados, los Vengadores se reúnen para invertir las acciones de Thanos y restaurar el equilibrio.",
+                "poster_avengers_endgame",
+                8.4
+        );
+
+        Pelicula pBlackPanther = new Pelicula(
+                "Black Panther",
+                "Ryan Coogler",
+                2018,
+                134.0,
+                "Accion, Aventura, Sci-Fi",
+                "T'Challa, heredero del avanzado pero oculto reino de Wakanda, debe liderar a su pueblo hacia un nuevo futuro y enfrentarse a un retador que emerge del pasado de su país.",
+                "poster_black_panther",
+                7.3
+        );
+
+        Pelicula pOppenheimer = new Pelicula(
+                "Oppenheimer",
+                "Christopher Nolan",
+                2023,
+                180.0,
+                "Biografia, Drama, Historia",
+                "La historia del científico J.Robert Oppenheimer y su papel en el desarrollo de la bomba atómica, desde el Proyecto Manhattan hasta las controversias políticas y morales posteriores.",
+                "poster_oppenheimer",
+                8.5
+        );
+
+        Pelicula pKnivesOut = new Pelicula(
+                "Knives Out",
+                "Rian Johnson",
+                2019,
+                130.0,
+                "Misterio, Comedia, Crimen",
+                "Un famoso detective, Benoit Blanc, investiga la muerte de un novelista enigmático en una mansión, descubriendo una familia disfuncional llena de secretos y mentiras.",
+                "poster_knives_out",
+                7.9
+        );
+
+        Pelicula pGlassOnion = new Pelicula(
+                "Glass Onion",
+                "Rian Johnson",
+                2022,
+                139.0,
+                "Misterio, Crimen, Comedia",
+                "El detective Benoit Blanc viaja a una isla privada en Grecia para investigar un asesinato entre los amigos de un multimillonario tecnológico.",
+                "poster_knives_out_glass_onion",
+                7.1
+        );
+
+        Pelicula pJohnWick4 = new Pelicula(
+                "John Wick: Chapter 4",
+                "Chad Stahelski",
+                2023,
+                169.0,
+                "Accion, Crimen, Thriller",
+                "John Wick descubre una forma de derrotar a la Mesa, pero debe enfrentarse a nuevos enemigos y viejos aliados se vuelven oponentes mientras lucha por su libertad.",
+                "poster_john_wick_4",
+                8.0
+        );
+
+        Pelicula pIntoSpiderverse = new Pelicula(
+                "Spider‑Man: Into the Spider‑Verse",
+                "Bob Persichetti, Peter Ramsey, Rodney Rothman",
+                2018,
+                117.0,
+                "Animacion, Accion, Aventura",
+                "Miles Morales, un adolescente de Brooklyn, se convierte en Spider‑Man de su universo y se une a otros hombres‑araña de dimensiones paralelas para enfrentar una amenaza multiversal.",
+                "poster_into_the_spider_verse",
+                8.4
+        );
+
+        Pelicula pGuardians1 = new Pelicula(
+                "Guardians of the Galaxy",
+                "James Gunn",
+                2014,
+                121.0,
+                "Accion, Aventura, Sci-Fi",
+                "Un grupo de criminales intergalácticos debe unirse para detener a un guerrero fanático que planea purgar el universo.",
+                "poster_guardians_of_the_galaxy",
+                8.0
+        );
+
+        Pelicula pGuardians2 = new Pelicula(
+                "Guardians of the Galaxy Vol. 2",
+                "James Gunn",
+                2017,
+                136.0,
+                "Accion, Aventura, Sci-Fi",
+                "Los Guardianes luchan para mantenerse unidos mientras Jackson “Star‑Lord” descubre los oscuros secretos de su padre celestial, Ego.",
+                "poster_guardians_of_the_galaxy_vol_2",
+                7.6
+        );
+
+        Pelicula pHalloween = new Pelicula(
+                "Halloween",
+                "David Gordon Green",
+                2018,
+                106.0,
+                "Terror, Suspense, Drama",
+                "Laurie Strode se enfrenta nuevamente a Michael Myers, el asesino en serie que la ha perseguido desde la noche de Halloween hace cuatro décadas.",
+                "poster_halloween",
+                6.5
+        );
+
+
+
+        Pelicula pAvatar2 = new Pelicula(
+                "Avatar: The Way of Water",
+                "James Cameron",
+                2022,
+                192.0,
+                "Accion, Aventura, Sci-Fi",
+                "Jake Sully lucha con su familia y los Na'vi para proteger Pandora cuando vuelve una amenaza familiar para destruir lo que consiguieron.",
+                "poster_avatar_way_of_water",
+                7.8
+        );
+
+        Pelicula pDune1984 = new Pelicula(
+                "Dune",
+                "David Lynch",
+                1984,
+                137.0,
+                "Sci-Fi, Aventura",
+                "El hijo de un duque lidera a los guerreros del desierto contra el emperador galáctico y el malvado enemigo de su padre para liberar su mundo natal.",
+                "poster_dune_1984",
+                6.3
+        );
+
+        Pelicula pEEAAO = new Pelicula(
+                "Everything Everywhere All at Once",
+                "Daniel Kwan, Daniel Scheinert",
+                2022,
+                139.0,
+                "Comedia, Sci-Fi, Drama",
+                "Una inmigrante china de mediana edad se ve arrastrada a una aventura interdimensional donde debe salvar la existencia explorando las vidas que pudo haber vivido.",
+                "poster_everything_everywhere_all_at_once",
+                8.1
+        );
+
+        Pelicula pGetOut = new Pelicula(
+                "Get Out",
+                "Jordan Peele",
+                2017,
+                104.0,
+                "Terror, Misterio, Suspense",
+                "Un joven afroamericano visita a los padres de su novia blanca, pero pronto descubre que su hospitalidad oculta un secreto profundamente perturbador.",
+                "poster_get_out",
+                7.8
+        );
+
+        Pelicula pIronMan1 = new Pelicula(
+                "Iron Man",
+                "Jon Favreau",
+                2008,
+                126.0,
+                "Accion, Sci-Fi, Aventura",
+                "Después de ser capturado en Afganistán, el ingeniero millonario Tony Stark crea una armadura para combatir el mal.",
+                "poster_iron_man",
+                7.9
+        );
+
+        Pelicula pIronMan2 = new Pelicula(
+                "Iron Man 2",
+                "Jon Favreau",
+                2010,
+                124.0,
+                "Accion, Sci-Fi, Aventura",
+                "Con el mundo sabiendo su identidad como Iron Man, Tony Stark enfrenta problemas de salud y un enemigo con vínculos con el legado de su padre.",
+                "poster_iron_man_2",
+                7.0
+        );
+
+        Pelicula pIronMan3 = new Pelicula(
+                "Iron Man 3",
+                "Shane Black",
+                2013,
+                130.0,
+                "Accion, Sci-Fi, Suspense",
+                "El mundo de Tony Stark se desmorona por un poderoso terrorista, lo que lo lleva a un odisea de reconstrucción y venganza.",
+                "poster_iron_man_3",
+                7.1
+        );
+
+        Pelicula pJurassicPark = new Pelicula(
+                "Jurassic Park",
+                "Steven Spielberg",
+                1993,
+                127.0,
+                "Aventura, Sci-Fi, Suspense",
+                "Un parque temático de dinosaurios clonados se convierte en caos cuando un fallo en la energía desata a los reptiles contra visitantes e investigadores.",
+                "poster_jurassic_park",
+                8.1
+        );
+
+        Pelicula pSuperMario = new Pelicula(
+                "The Super Mario Bros. Movie",
+                "Aaron Horvath, Michael Jelenic",
+                2023,
+                92.0,
+                "Animacion, Aventura, Comedia",
+                "Mario y Luigi se aventuran en el Reino Champiñón para rescatar a la Princesa Peach y enfrentarse al malvado Bowser.",
+                "poster_the_super_mario_bros_movie",
+                7.2
+        );
+
+
         peliculas.add(pJaws);
         peliculas.add(pPulpFiction);
         peliculas.add(pScarface);
@@ -150,10 +399,30 @@ public class Pelicula {
 
 
 
+        peliculas.add(pEndgame);
+        peliculas.add(pAvengers);
+        peliculas.add(pAgeOfUltron);
+        peliculas.add(pBlackPanther);
+        peliculas.add(pInfinityWar);
 
+        peliculas.add(pOppenheimer);
+        peliculas.add(pIntoSpiderverse);
+        peliculas.add(pHalloween);
+        peliculas.add(pGuardians1);
+        peliculas.add(pGuardians2);
+        peliculas.add(pJohnWick4);
+        peliculas.add(pKnivesOut);
+        peliculas.add(pGlassOnion);
 
-
-
+        peliculas.add(pAvatar2);
+        peliculas.add(pEEAAO);
+        peliculas.add(pSuperMario);
+        peliculas.add(pIronMan1);
+        peliculas.add(pIronMan2);
+        peliculas.add(pIronMan3);
+        peliculas.add(pJurassicPark);
+        peliculas.add(pGetOut);
+        peliculas.add(pDune1984);
     }
 
     public static Pelicula getPeliculaPorNombre(String nombre) {

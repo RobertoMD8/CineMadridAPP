@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Resenya extends AppCompatActivity {
 
@@ -65,16 +67,31 @@ public class Resenya extends AppCompatActivity {
         // ATRAS
         btnAtras.setOnClickListener(v -> {
             pelicula = null;
-            Intent intent = new Intent(Resenya.this, PantallaNavegacion.class);
+            Intent intent = new Intent();
+            Bundle extras = getIntent().getExtras();
+            if (extras != null) {
+                if (Objects.equals(extras.get("Principal"), true)) {
+                    intent = new Intent(Resenya.this, PrincipalPeliculaDetalles.class);
+                } else if (Objects.equals(extras.get("Personal"), true)) {
+                    intent = new Intent(Resenya.this, PersonalPeliculaDetalles.class);
+                } else {
+                    intent = new Intent(Resenya.this, PantallaNavegacion.class);
+                }
+            }
+
             startActivity(intent);
         });
 
         // GUARDAR
         btnGuardarReseña.setOnClickListener(v -> {
-            guardarReseña();
+            if (guardarReseña()) {
+                Intent intent = new Intent(Resenya.this, PantallaNavegacion.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Debes poner Nota O Reseña!", Toast.LENGTH_SHORT).show();
+            }
 
-            Intent intent = new Intent(Resenya.this, PantallaNavegacion.class);
-            startActivity(intent);
+
         });
     }
 
@@ -92,7 +109,7 @@ public class Resenya extends AppCompatActivity {
         }
     }
 
-    private void guardarReseña() {
+    private boolean guardarReseña() {
         String textoReseña = etReseña.getText().toString();
         if ( !(textoReseña.isEmpty() && nota.getRating() == 0) ) {
 
@@ -123,7 +140,11 @@ public class Resenya extends AppCompatActivity {
                 modificarReseñaBBDD(expedienteReseñaNota);
             }
 
+            return true;
+        } else {
+            return false;
         }
+
     }
 
     private void iniciarReseñaBBDD(ExpedienteReseñaNota expedienteReseñaNota) {

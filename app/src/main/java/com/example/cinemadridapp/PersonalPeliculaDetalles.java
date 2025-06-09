@@ -29,7 +29,6 @@ public class PersonalPeliculaDetalles extends AppCompatActivity {
 
     private ImageView posterPelicula;
     private TextView tvNotaGlobal;
-    private TextView tvNumeroDeNotas;
     private TextView tvNombrePelicula;
     private TextView tvDirector;
     private TextView tvDuracion;
@@ -59,7 +58,6 @@ public class PersonalPeliculaDetalles extends AppCompatActivity {
         btnAtras = findViewById(R.id.btnAtras);
         posterPelicula = findViewById(R.id.posterPelicula);
         tvNotaGlobal = findViewById(R.id.tvNotaGlobal);
-        tvNumeroDeNotas = findViewById(R.id.tvNumeroDeNotas);
         tvNombrePelicula = findViewById(R.id.tvNombrePelicula);
         tvDirector = findViewById(R.id.tvDirector);
         tvDuracion = findViewById(R.id.tvDuracion);
@@ -106,12 +104,14 @@ public class PersonalPeliculaDetalles extends AppCompatActivity {
         posterPelicula.setOnClickListener( v -> {
             Resenya.setPelicula(pelicula);
             Intent intent = new Intent(PersonalPeliculaDetalles.this, Resenya.class);
+            intent.putExtra("Personal", true);
             startActivity(intent);
         });
 
         // ATRAS
         btnAtras.setOnClickListener(v -> {
             Intent intent = new Intent(PersonalPeliculaDetalles.this, PantallaNavegacion.class);
+            intent.putExtra("Eleccion", R.id.navegacion_pantalla_personal);
             startActivity(intent);
         });
     }

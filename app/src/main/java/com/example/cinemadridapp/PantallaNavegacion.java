@@ -1,5 +1,6 @@
 package com.example.cinemadridapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,6 +35,19 @@ public class PantallaNavegacion extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_pantalla_principal);
 
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Bundle extra = getIntent().getExtras();
+        int id;
+        if (extra != null) {
+            id = (int) extra.get("Eleccion");
+            if (id != 0) {
+                binding.navView.setSelectedItemId(id);
+                setIntent(new Intent());
+            }
+        }
+
+
+
     }
 
 }

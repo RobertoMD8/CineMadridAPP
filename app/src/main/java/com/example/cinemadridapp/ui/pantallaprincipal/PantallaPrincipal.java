@@ -1,6 +1,7 @@
 package com.example.cinemadridapp.ui.pantallaprincipal;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -181,6 +182,7 @@ public class PantallaPrincipal extends Fragment {
                         imagenPelicula.setTag(pelicula.getPoster());
 
                         notaPelicula.setVisibility(View.VISIBLE);
+                        notaPelicula.setTextColor(Color.parseColor("#e6ae02"));
                         String notaGlobal = mapaNotasGlobales.get(pelicula.getNombre());
                         if (notaGlobal != null) {
                             notaPelicula.setText(notaGlobal);

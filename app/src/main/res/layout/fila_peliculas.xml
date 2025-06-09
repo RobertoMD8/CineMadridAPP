@@ -46,7 +46,7 @@
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textSize="17sp"
-        android:fontFamily="@font/nexa_regular"
+        android:fontFamily="@font/nexa_bold"
         />
 
 
@@ -84,7 +84,7 @@
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textSize="17sp"
-        android:fontFamily="@font/nexa_regular"
+        android:fontFamily="@font/nexa_bold"
         />
 
     <!-- TERCERA PELICULA -->
@@ -121,7 +121,7 @@
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textSize="17sp"
-        android:fontFamily="@font/nexa_regular"
+        android:fontFamily="@font/nexa_bold"
         />
 
 
@@ -161,7 +161,7 @@
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textSize="17sp"
-        android:fontFamily="@font/nexa_regular"
+        android:fontFamily="@font/nexa_bold"
         />
 
     <!--

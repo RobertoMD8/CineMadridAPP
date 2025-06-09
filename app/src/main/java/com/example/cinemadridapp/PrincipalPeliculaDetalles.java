@@ -145,6 +145,7 @@ public class PrincipalPeliculaDetalles extends AppCompatActivity {
         posterPelicula.setOnClickListener( v -> {
             Resenya.setPelicula(pelicula);
             Intent intent = new Intent(PrincipalPeliculaDetalles.this, Resenya.class);
+            intent.putExtra("Principal", true);
             startActivity(intent);
         });
 
@@ -157,6 +158,7 @@ public class PrincipalPeliculaDetalles extends AppCompatActivity {
         // ATRAS
         btnAtras.setOnClickListener(v -> {
             Intent intent = new Intent(PrincipalPeliculaDetalles.this, PantallaNavegacion.class);
+            intent.putExtra("Eleccion", R.id.navegacion_pantalla_principal);
             startActivity(intent);
         });
     }
