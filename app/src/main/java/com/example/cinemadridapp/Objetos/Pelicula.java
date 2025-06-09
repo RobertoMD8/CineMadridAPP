@@ -194,6 +194,38 @@ public class Pelicula {
     }
 
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public void setAño(int año) {
+        this.año = año;
+    }
+
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
+    public void setGeneros(String generos) {
+        this.generos = generos;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public void setNotaGlobal(double notaGlobal) {
+        this.notaGlobal = notaGlobal;
+    }
+
     public String getNombre() {
         return nombre;
     }

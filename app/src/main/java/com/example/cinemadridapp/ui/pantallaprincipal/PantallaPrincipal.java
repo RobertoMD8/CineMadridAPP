@@ -93,7 +93,7 @@ public class PantallaPrincipal extends Fragment {
         filtros.add("Nota");
         filtros.add("Nombre");
         filtros.add("Preferencias");
-        arrayAdapterFiltro = new ArrayAdapter<>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, filtros);
+        arrayAdapterFiltro = new ArrayAdapter<>(getContext(), R.layout.spinner_texto_blanco, filtros);
         spinnerFiltro.setAdapter(arrayAdapterFiltro);
 
         spinnerFiltro.setOnItemSelectedListener(filtrarListener());
@@ -297,6 +297,17 @@ public class PantallaPrincipal extends Fragment {
 
                         mapaNotasGlobales.put(doc.getString("pelicula"), notaGlobalTexto);
                     }
+
+                    for (Pelicula temp : peliculas) {
+                        temp.setNotaGlobal(0.0);
+                        for (Map.Entry<String, String> m : mapaNotasGlobales.entrySet()) {
+                            if (temp.getNombre().equals(m.getKey())) {
+                                temp.setNotaGlobal(Double.parseDouble(m.getValue()));
+                            }
+                        }
+                    }
+
+
                     arrayAdapterLayoutPeliculas.notifyDataSetChanged();
                 });
 

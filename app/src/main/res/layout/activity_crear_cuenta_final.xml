@@ -169,7 +169,7 @@
             app:layout_constraintStart_toStartOf="@id/accion"
             app:layout_constraintEnd_toEndOf="@id/accion"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
 
             android:tag="fantasia"
             android:src="@drawable/preferencia_fantasia"
@@ -186,7 +186,7 @@
             app:layout_constraintStart_toStartOf="@id/aventura"
             app:layout_constraintEnd_toEndOf="@id/aventura"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
 
             android:tag="terror"
             android:src="@drawable/preferencia_terror"
@@ -203,10 +203,10 @@
             app:layout_constraintStart_toStartOf="@id/drama"
             app:layout_constraintEnd_toEndOf="@id/drama"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
 
             android:tag="comedia"
-            android:src="@drawable/preferencia_accion"
+            android:src="@drawable/preferencia_comedia"
             android:scaleType="centerCrop"
             android:background="#00000000"
             android:alpha="0.5"
@@ -221,13 +221,140 @@
             app:layout_constraintStart_toStartOf="@id/sciFi"
             app:layout_constraintEnd_toEndOf="@id/sciFi"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
 
             android:tag="animado"
             android:src="@drawable/preferencia_animado"
             android:scaleType="centerCrop"
             android:background="#00000000"
             android:alpha="0.5"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/accion"
+            app:layout_constraintStart_toStartOf="@id/accion"
+            app:layout_constraintEnd_toEndOf="@id/accion"
+
+            android:text="Accion"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/accion"
+            app:layout_constraintStart_toStartOf="@id/accion"
+            app:layout_constraintEnd_toEndOf="@id/accion"
+
+            android:text="Accion"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/aventura"
+            app:layout_constraintStart_toStartOf="@id/aventura"
+            app:layout_constraintEnd_toEndOf="@id/aventura"
+
+            android:text="Aventura"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/drama"
+            app:layout_constraintStart_toStartOf="@id/drama"
+            app:layout_constraintEnd_toEndOf="@id/drama"
+
+            android:text="Drama"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/sciFi"
+            app:layout_constraintStart_toStartOf="@id/sciFi"
+            app:layout_constraintEnd_toEndOf="@id/sciFi"
+
+            android:text="Sci-Fi"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/fantasia"
+            app:layout_constraintStart_toStartOf="@id/fantasia"
+            app:layout_constraintEnd_toEndOf="@id/fantasia"
+
+            android:text="Fantasia"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/terror"
+            app:layout_constraintStart_toStartOf="@id/terror"
+            app:layout_constraintEnd_toEndOf="@id/terror"
+
+            android:text="Terror"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/comedia"
+            app:layout_constraintStart_toStartOf="@id/comedia"
+            app:layout_constraintEnd_toEndOf="@id/comedia"
+
+            android:text="Comedia"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/animado"
+            app:layout_constraintStart_toStartOf="@id/animado"
+            app:layout_constraintEnd_toEndOf="@id/animado"
+
+            android:text="Animado"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/nexa_regular"
+            android:textSize="13sp"
             />
 
         <Button
