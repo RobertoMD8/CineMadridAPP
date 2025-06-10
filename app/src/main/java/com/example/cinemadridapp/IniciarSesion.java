@@ -68,10 +68,8 @@ public class IniciarSesion extends AppCompatActivity {
 
 
             if (email.isEmpty() || password.isEmpty()) {
-                // Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
-                // return;
-                email = "prueba@gmail.com";
-                password = "password";
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+                return;
             }
 
             // CHECK CREDENCIALES
@@ -86,7 +84,7 @@ public class IniciarSesion extends AppCompatActivity {
                             startActivity(new Intent(IniciarSesion.this, PantallaNavegacion.class));
                             finish();
                         } else {
-                            Toast.makeText(this, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "Usuario o Contraseña Incorrecto", Toast.LENGTH_LONG).show();
                         }
                     });
         });

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -48,6 +49,8 @@ public class PantallaEstadisticas extends Fragment {
     private ProgressBar nivelCuenta;
     private ImageButton btnInterrogacion;
     private ImageButton btnRangoCuenta;
+    private ImageView rangoActual;
+    private ImageView rangoSiguiente;
 
 
     private TextView tvNombreUsuario;
@@ -74,6 +77,8 @@ public class PantallaEstadisticas extends Fragment {
         nivelCuenta = view.findViewById(R.id.nivelCuenta);
         btnInterrogacion = view.findViewById(R.id.btnInterrogacion);
         btnRangoCuenta = view.findViewById(R.id.btnRangoCuenta);
+        rangoActual = view.findViewById(R.id.rangoActual);
+        rangoSiguiente = view.findViewById(R.id.rangoSiguiente);
 
         // INTERFAZ ESTADISTICAS
         tvNombreUsuario = view.findViewById(R.id.tvNombreUsuario);
@@ -102,16 +107,24 @@ public class PantallaEstadisticas extends Fragment {
         btnRangoCuenta.setOnClickListener( v -> {
             if (mensajeInformacionRango.getVisibility() == View.GONE) {
                 mensajeInformacionRango.setVisibility(View.VISIBLE);
+
+                mensajeInformacionNivel.setVisibility(View.GONE);
             } else {
                 mensajeInformacionRango.setVisibility(View.GONE);
+
+                mensajeInformacionNivel.setVisibility(View.GONE);
             }
         });
 
         btnInterrogacion.setOnClickListener( v -> {
             if (mensajeInformacionNivel.getVisibility() == View.GONE) {
                 mensajeInformacionNivel.setVisibility(View.VISIBLE);
+
+                mensajeInformacionRango.setVisibility(View.GONE);
             } else {
                 mensajeInformacionNivel.setVisibility(View.GONE);
+
+                mensajeInformacionRango.setVisibility(View.GONE);
             }
         });
 
@@ -153,13 +166,21 @@ public class PantallaEstadisticas extends Fragment {
             totalMinutos += p.getPelicula().getDuracion();
 
         }
-        double duracionMedia = (double) totalMinutos /numPeliculasVistas;
+        double duracionMedia =  (double) totalMinutos /numPeliculasVistas;
+        if (Double.isNaN(duracionMedia)) {
+            duracionMedia = 0;
+        }
+
+        double notaMedia = totalNotas / numNotas;
+        if (Double.isNaN(notaMedia)) {
+            notaMedia = 0;
+        }
 
         Estadisticas.setRangoCuenta(setRangoCuenta(numPeliculasVistas));
         Estadisticas.setNivelCuenta(numPeliculasVistas);
         Estadisticas.setNumPeliculasVistas(numPeliculasVistas);
         Estadisticas.setNumPeliculasReseñadas(numPeliculasReseñadas);
-        Estadisticas.setNotaMedia(totalNotas / numNotas);
+        Estadisticas.setNotaMedia(notaMedia);
 
         String generoFavorito = this.setGeneroFavorito(arrayGeneros);
         Estadisticas.setGeneroFavorito(generoFavorito);
@@ -187,7 +208,7 @@ public class PantallaEstadisticas extends Fragment {
         for ( String g : generos) {
             mapaGeneros.put(g, (mapaGeneros.getOrDefault(g, 0) + 1));
         }
-        String generoFavorito = null;
+        String generoFavorito = "Ninguno";
         int maxValue = Integer.MIN_VALUE;
         for (Map.Entry<String, Integer> entry : mapaGeneros.entrySet()) {
             if (entry.getValue() > maxValue) {
@@ -200,7 +221,7 @@ public class PantallaEstadisticas extends Fragment {
     }
 
     private String setDirectorFavorito(HashMap<String, Integer> directores) {
-        String director = null;
+        String director = "Ninguno";
         int maxValue = Integer.MIN_VALUE;
         for (Map.Entry<String, Integer> entry : directores.entrySet()) {
             if (entry.getValue() > maxValue) {
@@ -221,7 +242,7 @@ public class PantallaEstadisticas extends Fragment {
         tvDirectorFavorito.setText(Estadisticas.getDirectorFavorito());
         tvGeneroFavorito.setText(Estadisticas.getGeneroFavorito());
         tvTotalMinutosVistos.setText("Total -> " + String.valueOf(Estadisticas.getTotalMinutosVistos()) + " Minutos");
-        tvDuracionMedia.setText("Avg -> " + String.format("%.1f", Estadisticas.getDuracionMediaPeliculas()) + " Minutos");
+        tvDuracionMedia.setText("Media -> " + String.format("%.1f", Estadisticas.getDuracionMediaPeliculas()) + " Minutos");
 
     }
 
@@ -231,35 +252,47 @@ public class PantallaEstadisticas extends Fragment {
         if (nivel <= 15) {
             rango = "Bronce";
             btnRangoCuenta.setImageResource(R.drawable.rango_bronce);
-            nivelCuenta.setMax(15);
+            rangoActual.setImageResource(R.drawable.rango_bronce);
+            rangoSiguiente.setImageResource(R.drawable.rango_plata);
+            nivelCuenta.setMax(16);
             nivelCuenta.setProgress(nivel);
         } else if (nivel <= 50) {
             rango = "Plata";
             btnRangoCuenta.setImageResource(R.drawable.rango_plata);
+            rangoActual.setImageResource(R.drawable.rango_plata);
+            rangoSiguiente.setImageResource(R.drawable.rango_oro);
             nivelCuenta.setMin(15);
             nivelCuenta.setMax(50);
             nivelCuenta.setProgress(nivel);
         } else if (nivel <= 150) {
             rango = "Oro";
             btnRangoCuenta.setImageResource(R.drawable.rango_oro);
+            rangoActual.setImageResource(R.drawable.rango_oro);
+            rangoSiguiente.setImageResource(R.drawable.rango_diamante);
             nivelCuenta.setMin(50);
             nivelCuenta.setMax(150);
             nivelCuenta.setProgress(nivel);
         } else if (nivel <= 500) {
             rango = "Diamante";
             btnRangoCuenta.setImageResource(R.drawable.rango_diamante);
+            rangoActual.setImageResource(R.drawable.rango_diamante);
+            rangoSiguiente.setImageResource(R.drawable.rango_cristal_nuevo);
             nivelCuenta.setMin(150);
             nivelCuenta.setMax(500);
             nivelCuenta.setProgress(nivel);
         } else if (nivel <= 1000) {
             rango = "Cristal";
-            btnRangoCuenta.setImageResource(R.drawable.rango_cristal);
+            btnRangoCuenta.setImageResource(R.drawable.rango_cristal_nuevo);
+            rangoActual.setImageResource(R.drawable.rango_cristal_nuevo);
+            rangoSiguiente.setImageResource(R.drawable.rango_legendario);
             nivelCuenta.setMin(500);
             nivelCuenta.setMax(1000);
             nivelCuenta.setProgress(nivel);
         } else {
             rango = "Legendario";
             btnRangoCuenta.setImageResource(R.drawable.rango_legendario);
+            rangoActual.setImageResource(R.drawable.rango_legendario);
+            rangoSiguiente.setImageResource(R.drawable.rango_legendario);
             nivelCuenta.setMin(1000);
             nivelCuenta.setMax(50000);
             nivelCuenta.setProgress(nivel);

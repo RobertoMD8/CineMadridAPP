@@ -3,6 +3,8 @@ package com.example.cinemadridapp.ui.pantallaprincipal;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -66,6 +68,8 @@ public class PantallaPrincipal extends Fragment {
     List<Pelicula> peliculas;
     HashMap<String, String> mapaNotasGlobales;
 
+    public static int posicionFiltro = -1;
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -98,6 +102,13 @@ public class PantallaPrincipal extends Fragment {
         spinnerFiltro.setAdapter(arrayAdapterFiltro);
 
         spinnerFiltro.setOnItemSelectedListener(filtrarListener());
+        if (posicionFiltro != -1) {
+            spinnerFiltro.setSelection(posicionFiltro);
+        }
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            getNotasGlobalesBBDD();
+        }, 1000);
 
     }
 
@@ -251,6 +262,7 @@ public class PantallaPrincipal extends Fragment {
         return new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                posicionFiltro = position;
                 String seleccion = parent.getItemAtPosition(position).toString();
                 filtrar(seleccion);
             }
@@ -342,7 +354,7 @@ public class PantallaPrincipal extends Fragment {
 
             for (String s : preferencias) {
                 for (int x = 0; x < split.length ; x++) {
-                    if (split[x].trim().equals(s)) {
+                    if (split[x].trim().toLowerCase().equals(s.toLowerCase().trim())) {
                         Log.d("PERO BUENO", p.getNombre() + " : " + split[x]);
                         Log.d("PREFERENCIAS MATCH", p.getNombre() + " : " + s);
                         count++;

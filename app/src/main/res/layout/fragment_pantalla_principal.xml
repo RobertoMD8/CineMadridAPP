@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="50dp"
-        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintWidth_percent="0.69"
         android:layout_marginStart="5dp"
 
         android:background="@drawable/edit_text_buscar_pelicula"

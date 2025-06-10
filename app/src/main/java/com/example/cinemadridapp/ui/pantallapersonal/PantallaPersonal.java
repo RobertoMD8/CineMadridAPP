@@ -2,6 +2,8 @@ package com.example.cinemadridapp.ui.pantallapersonal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -91,6 +93,10 @@ public class PantallaPersonal extends Fragment {
 
         spinnerFiltro.setOnItemSelectedListener(filtrarListener());
 
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            arrayAdapterLayoutPeliculas.notifyDataSetChanged();
+        }, 500);
+
     }
 
     View.OnClickListener verPelicula = v -> {
@@ -124,6 +130,7 @@ public class PantallaPersonal extends Fragment {
                     convertView = LayoutInflater.from(getContext()).inflate(R.layout.fila_peliculas, parent, false);
                 }
 
+                actualizar();
 
                 int alturaPorcentaje = (int) (alturaPantalla * 0.185);
                 View layout = convertView.findViewById(R.id.filaPeliculas);
@@ -330,6 +337,17 @@ public class PantallaPersonal extends Fragment {
             chunks.add(peliculas.subList(i, Math.min(i + 4, peliculas.size())));
         }
         return chunks;
+    }
+
+    public void actualizar() {
+        peliculas = new ArrayList<>();
+        peliculasReseñadas = new ArrayList<>();
+        for (ExpedienteReseñaNota exp : ExpedienteReseñaNota.expedienteReseñaNotas) {
+            Pelicula temp = exp.getPelicula();
+            temp.setNotaGlobal(exp.getNota());
+            peliculasReseñadas.add(temp);
+        }
+        peliculas = peliculasReseñadas;
     }
 
     public List<Pelicula> comprimirPeliculas(List<List<Pelicula>> peliculas) {

@@ -44,6 +44,7 @@ public class PantallaNavegacion extends AppCompatActivity {
                 binding.navView.setSelectedItemId(id);
                 setIntent(new Intent());
             }
+
         }
 
 

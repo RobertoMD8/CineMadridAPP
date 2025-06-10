@@ -50,7 +50,7 @@ public class Pelicula {
         Pelicula pInterstellar = new Pelicula("Interstellar", "Christopher Nolan", 2014 , 169.0, "Sci-Fi, Aventura, Drama",
                 "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.", "poster_interstellar", 8.7);
 
-        Pelicula pAlien = new Pelicula("Alien", "Ridley Scott", 1979, 117.0, "Terror, Sci-Fi",
+        Pelicula pAlien = new Pelicula("Alien", "Ridley Scott", 1979, 117.0, "Terror, Sci-Fi, Drama",
                 "La tripulación de una nave espacial comercial se encuentra con una forma de vida mortal tras investigar una transmisión desconocida.", "poster_alien", 8.5);
 
         Pelicula pGladiator = new Pelicula("Gladiator", "Ridley Scott", 2001, 155.0, "Historia, Aventura, Drama",

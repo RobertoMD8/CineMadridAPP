@@ -31,7 +31,7 @@
             android:id="@+id/lNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre de Usuario"
+            android:text="Correo"
             android:textColor="#ffffff"
             android:textSize="25sp"
             android:fontFamily="@font/nexa_bold"

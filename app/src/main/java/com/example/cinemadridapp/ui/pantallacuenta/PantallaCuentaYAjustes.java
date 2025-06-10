@@ -20,6 +20,7 @@ import com.example.cinemadridapp.Objetos.Preferencia;
 import com.example.cinemadridapp.Objetos.Usuario;
 import com.example.cinemadridapp.R;
 import com.example.cinemadridapp.databinding.FragmentPantallaCuentaAjustesBinding;
+import com.example.cinemadridapp.ui.pantallaprincipal.PantallaPrincipal;
 
 import java.util.ArrayList;
 
@@ -104,6 +105,7 @@ public class PantallaCuentaYAjustes extends Fragment {
             Usuario.vaciarUsuario();
             Preferencia.vaciarPreferencias();
             ExpedienteReseñaNota.vaciarExpedientes();
+            PantallaPrincipal.posicionFiltro = -1;
             Intent intent = new Intent(PantallaCuentaYAjustes.this.getActivity(), MainActivity.class);
             startActivity(intent);
         });

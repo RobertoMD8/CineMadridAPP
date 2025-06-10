@@ -129,6 +129,7 @@
                 />
 
             <ImageView
+                android:id="@+id/rangoActual"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 app:layout_constraintStart_toStartOf="@+id/nivelCuenta"
@@ -141,6 +142,7 @@
                 />
 
             <ImageView
+                android:id="@+id/rangoSiguiente"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 app:layout_constraintStart_toEndOf="@+id/nivelCuenta"
